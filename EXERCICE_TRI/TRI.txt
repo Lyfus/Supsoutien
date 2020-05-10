@@ -1,0 +1,22 @@
+Le but de cet exercice est de trier le tableau TABLEAU_EN_BORDEL
+VOUS DEVEZ ECRIRE EN FRANCAIS LES ETAPES DE L'ALGORITHME.
+VOUS POUVEZ AJOUTER DES VARIABLES
+
+## GLOSSAIRE / AIDE ##
+ARRAY: Tableau en anglais, ce mot est souvent utilisé dans beaucoup de langages pour initialiser un tableau
+
+## VARIABLES ##
+ARRAY TABLEAU_EN_BORDEL : [9,4,1,6,2,7,3,8,5]
+
+## ETAPES ##
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+
