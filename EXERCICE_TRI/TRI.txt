@@ -1,4 +1,4 @@
-Le but de cet exercice est de trier le tableau TABLEAU_EN_BORDEL
+Le but de cet exercice est de trier dans l'ordre croissant le tableau TABLEAU_EN_BORDEL
 VOUS DEVEZ ECRIRE EN FRANCAIS LES ETAPES DE L'ALGORITHME.
 VOUS POUVEZ AJOUTER DES VARIABLES
 
