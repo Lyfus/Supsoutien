@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" value="SAVATTIER SIMON">
+
+        <title>Exercice niveau FACILE: L'Ecole</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- NE PAS MODIFIER -->
+        <h1>Bulletins des élèves</h1>
+        <table id="studentData" class="table">
+            <!-- Tableau d'affichage des étudiants -->
+                <tr>
+                    <th>Nom étudiant</th>
+                    <th>Maths</th>
+                    <th>Français</th>
+                    <th>Histoire</th>
+                    <th>Sport</th>
+                    <th>Moyenne</th>
+                    <th>Appréciation</th>
+                </tr>
+        </table>
+        <!-- NE PAS MODIFIER -->
+    </body>
+    <script type="text/javascript">
+
+        // DONNEES 
+        // Noms des étudiants
+        let etudiants = ["Cyril", "Thomas", "Cindy", "Nicolas", "Sammuel", "Nathalie", "Laurent", "Stéphane"]
+        // Note regroupée pour la matière Maths
+        let notesMaths = [2,12,18,2,6,16,12,14];
+        // Note regroupée pour la matière Français
+        let notesFrancais = [4,12,18,8,16,17,2,20];
+        // Note regroupée pour la matière Histoire
+        let noteHistoire = [6,5,19,10,15,18,18,4];
+        // Note regroupée pour la matière Sport
+        let noteSport = [6,16,20,8,6,18,12,10];
+
+        // Nombre total d'étudiant
+        let nbrEtudiants = etudiants.length;
+        // Nbre de matière
+        let nbreMatieres = 4;
+
+        // Tableau à remplir pour affichage
+        let classData = [];
+
+        // Fonction de tri des données pour les mettre dans un tableau propre à chaque étudiant
+        function regroupData(index) {
+			// A COMPLETER
+        }
+
+        // Fonction d'affichage des données, NE PAS MODIFIER
+        function writeData() {
+            var refTable = document.getElementById("studentData");
+
+            // pour chaque étudiants
+            classData.forEach(student => {
+                // on crée une ligne
+                var nouvelleCellule = refTable.insertRow();
+                // total des notes
+                var totalNotes = 0;
+
+                // pour chaque élement des données des étudiants, ici : prénom, note en maths, français, histoire et sport
+                student.forEach(donnee => {          
+                    // Enfin on insert la données en question  
+                    // Si la donnee est le prenom, on se contente d'insérer la donnee dans le tableau
+                    if(isNaN(parseInt(donnee))) {
+                        nouvelleCellule.insertCell().appendChild(document.createTextNode(donnee));
+                    }
+                    // sinon on l'ajoute au total en plus
+                    else {
+                        totalNotes += donnee
+                        nouvelleCellule.insertCell().appendChild(document.createTextNode(donnee));
+                    }
+                })
+
+                // ajout de la moyenne
+                let moyenne = totalNotes/nbreMatieres;
+                nouvelleCellule.insertCell().appendChild(document.createTextNode(moyenne));
+                // ajout de l"appréciation
+                nouvelleCellule.insertCell().appendChild(document.createTextNode(getAppreciation(moyenne)));
+            })
+        }
+
+        // Fonction qui retourne une appréciation en fonction de la matière
+        function getAppreciation(moyenne) {
+			// A COMPLETER
+        }
+
+        // La méthode qu'on va appeler pour tout trier
+        function initData() {
+			// A COMPLETER
+			
+            // affichage | NE PAS MODIFIER
+            writeData();
+        }
+
+        // au lancement, on lance initData
+        initData();
+    </script>
+</html>

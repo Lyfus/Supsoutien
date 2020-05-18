@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" value="SAVATTIER SIMON">
+
+        <title>EXERCICE 1 (Facile): L'Ecole</title>
+
+    </head>
+    <body>
+        <!-- NE PAS MODIFIER -->
+        <h1>Bulletins des élèves</h1>
+        <table id="studentData">
+            <!-- Tableau d'affichage des étudiants -->
+            <thead>
+                <tr>
+                    <td>Nom étudiant :</td>
+                    <td>Moyenne : </td>
+                    <td>Appréciation : </td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <!-- NE PAS MODIFIER -->
+    </body>
+    <script type="text/javascript">
+
+        // DONNEES 
+        // Noms des étudiants
+        let etudiants = ["Cyril", "Thomas", "Cindy", "Nicolas", "Sammuel", "Nathalie", "Laurent", "Stéphane"]
+        // Note regroupée pour la matière Maths
+        let notesMaths = [8,12,18,2,6,10,12,14];
+        // Note regroupée pour la matière Français
+        let notesFrancais = [14,12,10,8,16,10,2,20];
+        // Note regroupée pour la matière Histoire
+        let noteHistoire = [10,5,10,10,15,14,18,4];
+        // Note regroupée pour la matière Sport
+        let noteSport = [19,16,16,8,6,10,12,10];
+
+        // Nombre total d'étudiant
+        let nbrEtudiants = etudiants.length;
+
+        // Tableau à remplir pour affichage
+        let classData = [];
+
+        // Fonction de tri des données pour les mettre dans un tableau propre à chaque étudiant
+        function regroupData(index) {
+            let studentData = []
+
+            // On va chercher toutes les données propre à l'étudiant donné en paramètre de la fonction
+            // et on le stock dans studentData qu'on stockera dans classData
+
+            // prénom de l'élève
+            studentData.push(etudiants[index]);
+            // Note en Maths
+            studentData.push(notesMaths[index]);
+            // Note en Français
+            studentData.push(notesFrancais[index]);
+            // Note en Histoire
+            studentData.push(noteHistoire[index]);
+            // Note en Sport
+            studentData.push(noteSport[index]);
+
+            // une fois le tableau crée, on le met dans classData
+            classData.push(studentData);
+        }
+
+        // function d'affichage des données, NE PAS MODIFIER
+        function writeData() {
+            classData.forEach(student => {
+                var refTable = document.getElementById("studentData");
+                // Récupération d'une référence à la table
+                var nouvelleLigne = refTable.insertRow(0);
+
+                // Insère une ligne dans la table à l'indice de ligne 0
+                var nouvelleLigne = refTable.insertRow(0);
+            })
+        }
+
+        // La méthode qu'on va appeler pour tout trier
+        function initData() {
+            // On va faire une boucle qui va contenir tous les étudiants
+            // ici on va utiliser une boucle for, qui donnera un index à chaque étudiant pour aller chercher leur données dans les tableaux
+            // en utilisant la fonction regroupData()
+            for(let i = 0; i < nbrEtudiants; i++) { // la boucle s'arretera quand on aura atteint le nombre maximale d'étudiants
+                regroupData(i);
+            }
+            // affichage
+            writeData();
+        }
+
+        // au lancement, on lance initData
+        initData();
+    </script>
+</html>
